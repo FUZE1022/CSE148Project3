@@ -4,41 +4,50 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class RegisterNewUserSceneController {
+public class MainLoginSceneController {
 
     @FXML
     private GridPane root;
 
     @FXML
-    private TextField regsiterUserUsernameTextField;
-    @FXML
-    private TextField registerUserPasswordTextField;
+    private TextField mainLoginScreenUsernameTextField;
 
     @FXML
-    private TextField registerUserConfirmPasswordTextField;
+    private TextField mainLoginScreenPasswordTextField;
 
     @FXML
-    private Button registerUserSceneCreateAccountButton;
+    private Button mainLoginSceneLoginButton;
 
     @FXML
-    private Button registerUserCancelButton;
+    private Button adminMainLoginSceneAdminLoginButton;
 
-    public void registerUserCreateAccountButtonOnAction() {
-        System.out.println("btn pressed");
+    private Hyperlink mainLoginSceneRegisterUserHyperlink;
+
+    @FXML
+    private void mainLoginSceneLoginButtonOnAction(ActionEvent event) throws IOException {
+        System.out.println("Login button pressed");
     }
 
     @FXML
-    private void registerUserCancelButtonOnAction(ActionEvent event) throws IOException {
+    private void adminMainLoginSceneAdminLoginButtonOnAction(ActionEvent event) throws IOException {
+        System.out.println("Admin Login button pressed");
+    }
+
+    @FXML
+    private void mainLoginSceneRegisterHyperLinkOnAction(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/cse/cse148project3/views" +
-                "/mainLoginScene-view.fxml"));
+                "/registerUserScene-view.fxml"));
         Stage stage = new Stage();
         Scene newScene = new Scene(fxmlLoader.load(), 800, 500);
         stage.setTitle("Register New User");
