@@ -41,7 +41,7 @@ public class RegisterNewUserSceneController {
                 "/mainLoginScene-view.fxml"));
         Stage stage = new Stage();
         Scene newScene = new Scene(fxmlLoader.load(), 800, 500);
-        stage.setTitle("Register New User");
+        stage.setTitle("Login");
 
         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         currentStage.close();
